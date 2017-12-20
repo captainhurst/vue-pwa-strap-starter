@@ -17,7 +17,9 @@
     "bootstrap-vue": "^1.4.0",
     "jquery": "^1.12.4",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vue-simple-uploader": "^0.4.0",
+    "vue-video-player": "^4.0.6"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.5",
