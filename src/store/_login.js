@@ -56,17 +56,20 @@ const login = {
   actions: {
     login({commit}, credentials){
       commit(LOGIN);
-      Vue.axios.post('authenticate/login', {credentials:credentials})
+      console.log("credentials", credentials.user_name)
+      Vue.axios.post('authenticate/login', credentials)
       .then((response) => {
         localStorage.setItem("token", response.data.id);
-        localStorage.setItem("user", JSON.stringify(response.data.user));
-        commit(LOGIN_SUCCESS, response.data.user);
-        window.location.href ="/dashboard"
+        localStorage.setItem("user", JSON.stringify(response.data));
+        commit(LOGIN_SUCCESS, response.data);
+        window.location.href = "/"
+        console.log("this",this)
       })
       .catch((error) => {
+        console.log("this",this)
 
-        if(error.response.data){
-          commit(LOGIN_FAILURE, error.response.data)
+        if(error.response){
+          commit(LOGIN_FAILURE, error.response)
         }
         console.log("Errors", error.response)
       })

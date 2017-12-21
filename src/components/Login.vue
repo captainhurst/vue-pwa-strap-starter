@@ -34,11 +34,14 @@ export default {
   },
   methods: {
     attemptLogin(){
-      console.log("Email", this.email);
-      this.$store.dispatch("login", {credentials:{
-        user_name: this.user_name,
-        password: this.password
-      }}).then((response) => {
+      console.log("this.user_name", this.user_name);
+      let credentials = {
+          credentials:{
+          user_name: this.user_name,
+          password: this.password
+        }
+      }
+      this.$store.dispatch("login", credentials).then((response) => {
         console.log("Response", response)
       })
     }

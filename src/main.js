@@ -13,12 +13,11 @@ let port = '4000'
 var instance = axios.create({
   baseURL: `http://${hostname}${port ? ':' + port : ''}/api/v1`,
   timeout: 10000,
+  withCredentials: false,
   headers: {
-    'Accept': 'application/json, text/plain, */*',
+    'Accept': 'application/json',
     'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*'
-  },
-  withCredentials: false
+  }
 });
 
 import App from './App'
