@@ -15,7 +15,7 @@ const router = new Router({
       name: 'Dashboard',
       component: Dashboard,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       },
     },
     {
